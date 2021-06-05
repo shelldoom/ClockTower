@@ -1,0 +1,7 @@
+*.log
+__pycache__/
+.mypy_cache/
+.vscode/
+*.ini
+.ipynb_checkpoints
+!config_example.ini
