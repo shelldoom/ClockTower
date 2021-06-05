@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import CommandHandler, CallbackContext, Filters
 from PIL import Image
-import base64, io, json, random, requests
+import base64, json, random, requests
 from config import imgbb_api_key
 from logs import logger
 from components.messages import LOADING_STICKER

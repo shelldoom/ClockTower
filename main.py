@@ -1,11 +1,9 @@
-import logging
-from telegram import Update
-from telegram.ext import Updater, CallbackContext, Dispatcher
+from telegram.ext import Updater, Dispatcher
 from config import botToken
 import setup
 
-updater = Updater(token=botToken)
-dispatcher = updater.dispatcher
+updater: Updater = Updater(token=botToken)
+dispatcher: Dispatcher = updater.dispatcher
 
 setup.setup(dispatcher)
 
