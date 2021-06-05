@@ -1,4 +1,4 @@
-A telegram bot made with python
+A telegram bot
 
 Todo list:
 1. Redis
