@@ -2,7 +2,6 @@ from telegram import Update
 from telegram.ext import CommandHandler, CallbackContext, Filters
 from config import mongo_client, db_name
 import requests, json, hashlib, datetime
-import heapq
 
 ud_collection = mongo_client[db_name]["ud"]
 
