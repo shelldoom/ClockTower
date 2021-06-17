@@ -1,4 +1,4 @@
-from telegram.ext import CallbackContext, Filters, CommandHandler
+from telegram.ext import CallbackContext, Filters, CommandHandler, MessageHandler
 from telegram import Update
 from random import choice
 from .messages import HELP_MSG, DONATE_MSG, START_STICKER, GRP_START_MSG
@@ -68,3 +68,18 @@ def echo_callback(update:Update, context:CallbackContext) -> None:
     else:
         context.bot.send_message(chat_id=update.effective_chat.id, reply_to_message_id=update.effective_message.message_id, text=userQuery)
 echo_handler = CommandHandler("echo", echo_callback, filters=~Filters.update.edited_message)
+
+def new_mem_callback(update: Update, context: CallbackContext):
+    members = update.message.new_chat_members
+    members = ['@'+m.username for m in members]
+    update.message.reply_text(f"Welcome {','.join(members)}!")
+
+new_mem_handler = MessageHandler(Filters.status_update.new_chat_members, new_mem_callback)
+
+def bad_cmd(update: Update, context: CallbackContext) -> None:
+    raise ValueError("This is a sample test error!")
+
+badCmd_Handler = CommandHandler(
+    "error_test_test", bad_cmd, filters=~Filters.update.edited_message
+)
+
