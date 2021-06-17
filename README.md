@@ -11,4 +11,3 @@ Dependencies:
 - [python-telegram-bot](https://python-telegram-bot.org/)
 - [pymongo](https://pypi.org/project/pymongo/)
 - [requests](https://docs.python-requests.org/en/master/index.html)
-- requests
