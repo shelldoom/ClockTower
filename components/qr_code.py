@@ -1,4 +1,3 @@
-from ast import parse
 from telegram import Update
 from telegram.ext import CommandHandler, CallbackContext, Filters
 from config import qr_collection, imgbb_api_key
@@ -16,10 +15,10 @@ Output: Converts and returns in its QR image form
 
 Example:
 <code>msg 1:  This is a sample text </code>
-<code>(replies to msg 1)msg 2: /qr </code>
-Here <code>message 2</code> is a reply to <code>message 1</code>.
+<code>msg 2: /qr </code>
+Here <code>msg 2</code> is a reply to <code>msg 1</code>.
 
-You can also use /qr instead of /qrcode.
+You can also use <code>/qr</code> instead of <code>/qrcode</code>.
 '''
 
 def getImageBytes(img:Image):
@@ -63,7 +62,7 @@ def qr_callback(update:Update, context:CallbackContext):
     parentMsg = update.effective_message.reply_to_message
     if userQuery in ['', ' ']:
         if parentMsg == None:
-            context.bot.send_message(chat_id=update.effective_chat.id, text=QR_MSG, parsemode="HTML")
+            context.bot.send_message(chat_id=update.effective_chat.id, text=QR_MSG, parse_mode="HTML")
             return
         userQuery = parentMsg.text
         

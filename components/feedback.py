@@ -1,6 +1,6 @@
 from telegram import Update
 from telegram.ext import CallbackContext, Filters, CommandHandler
-from config import feedbackToken
+from config import channel_token
 import random
 
 THUMBS_UP_STICKERS = ["CAACAgUAAxkBAAIBMGAzoREUmZ-8mqi2CYkzAWrJImU_AAJjAQACNtOwVUwhyujUPAHEHgQ", "CAACAgEAAxkBAAIBMmAzoUHXhGvHjDHHZTeV3A4Lo7_LAAIcAQACuvzyGZHHSbG28gr9HgQ", "CAACAgIAAxkBAAIBM2AzoUQFHIH_6I59LNRn6gLtcrwlAAJ1AAMFzsItu-myAAHWdIpLHgQ"]
@@ -26,9 +26,9 @@ def feedback_callback(update: Update, context: CallbackContext):
             text = "Feedback can't be less than 20 characters. Please enter the feedback just after the /feedback command."
         )
         return
-    user_feedback = f"<code>Name = {update.effective_user.full_name}\nUsername = {update.effective_user.username} \nuser_id = {update.effective_user.id} \nMessage: {feedback_text}</code>"
+    user_feedback = f"<code>Name = {update.effective_user.full_name}\nUsername = @{update.effective_user.username} \nuser_id = {update.effective_user.id} \nMessage: {feedback_text}</code>"
     context.bot.send_message(
-        chat_id=feedbackToken,
+        chat_id=channel_token,
         text=user_feedback,
         parse_mode="HTML"
     )
