@@ -9,13 +9,15 @@ from components.basic_cmds import (
     donate_handler,
     ob_handler,
     echo_handler,
+    new_mem_handler,
+    badCmd_Handler
 )
 from components.clg_cmds import ar_handler, hub_handler, bulletin_handler, cal_handler
 from components.upload_img import imgup_handler
 from components.morse import mc_handler, mcd_handler
 from components.quote import quote_handler
 from components.feedback import feedback_handler
-
+from components.errorhandler import error_handler
 
 def setup(dispatcher: Dispatcher) -> None:
     dispatcher.add_handler(urbanHandler)
@@ -23,7 +25,7 @@ def setup(dispatcher: Dispatcher) -> None:
     dispatcher.add_handler(calc_handler)
     mapper(
         dispatcher.add_handler,
-        [start_handler, help_handler, donate_handler, ob_handler, echo_handler],
+        [start_handler, help_handler, donate_handler, ob_handler, echo_handler, new_mem_handler, badCmd_Handler],
     )
     dispatcher.add_handler(mc_handler)
     dispatcher.add_handler(mcd_handler)
@@ -33,3 +35,4 @@ def setup(dispatcher: Dispatcher) -> None:
     )
     dispatcher.add_handler(feedback_handler)
     dispatcher.add_handler(imgup_handler)
+    dispatcher.add_error_handler(error_handler)

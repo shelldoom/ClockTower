@@ -1,15 +1,28 @@
-HELP_MSG = """
-Hey there user! 
+import html
 
-Main commands available
+HELP_MSG = f"""
+Hey there user!
+
+Commands available:
 
 ■ /start - start the bot
 ■ /help - prints this message
 ■ /feedback - send feedback about the bot to creator
+
 ■ /dc - prints current working hubs
 ■ /ar - academic resources
 ■ /cal - academic calendar
 ■ /bulletin - bulletin
+■ /ob - ob
+
+■ /echo - echo provided message
+■ /ud - get {html.escape('<query>')} definition from urban dictionary
+■ /imgup - get image link
+■ /eval - evaluate a arithmetic expression
+■ /quote - get random quote
+■ /qr - convert text to qr code image
+■ /mce - convert text to morse code (encode)
+■ /mcd - convert morse code to text (decode)
 """
 
 GRP_START_MSG = """

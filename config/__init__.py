@@ -4,7 +4,7 @@ import pymongo
 botConfig = configparser.ConfigParser()
 botConfig.read("./config/config.ini")
 botToken = botConfig["BOT"]["TOKEN"]
-feedbackToken = botConfig["FEEDBACK"]["TOKEN"]
+channel_token = botConfig["FEEDBACK"]["TOKEN"]
 
 pwd = botConfig["MONGO"]["PWD"]
 user = botConfig["MONGO"]["USER"]
