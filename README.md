@@ -1,6 +1,9 @@
-A telegram bot
+### ClockTower
 
-Features:
+A telegram bot made with python
+
+#### Features:
+
 1. Welcome Message while entering the group
 2. Calculator (Validates expression and timeouts if expensive)
 3. Echo message
@@ -13,13 +16,14 @@ Features:
 10. Get query definition from [Urban Dictionary](https://api.urbandictionary.com/v0/define?term=urban%20dictionary)
 11. MongoDB for caching API responses
 
-Requirements:
+#### Requirements:
+
 - Python 3.8 or above
 - [python-telegram-bot](https://python-telegram-bot.org/)
 - [Requests](https://docs.python-requests.org/en/master/)
 - [pymongo](https://github.com/mongodb/mongo-python-driver)
 
-## Installation & Usage
+#### Installation & Usage
 1. Install dependencies
 ```bash
 pip3 install -r requirements.txt
@@ -28,5 +32,6 @@ pip3 install -r requirements.txt
 3. Setup MongoDB
 4. Run `main.py`
 
-Todo list:
+#### Todo list:
+
 1. Change to Redis
