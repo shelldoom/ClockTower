@@ -5,7 +5,7 @@ from .messages import HELP_MSG, DONATE_MSG, START_STICKER, GRP_START_MSG
 
 
 # /start
-def start_callback(update:Update, context:CallbackContext):
+def start_callback(update: Update, context: CallbackContext):
     if update.effective_chat.type == "group":
         context.bot.send_message(chat_id= update.effective_chat.id, text=GRP_START_MSG, parse_mode="HTML")
         return
@@ -17,7 +17,7 @@ start_handler = CommandHandler(["start"], start_callback, filters=~Filters.updat
 
 
 # /help
-def help_callback(update:Update, context:CallbackContext) -> None:
+def help_callback(update: Update, context: CallbackContext) -> None:
     context.bot.send_message(
         chat_id = update.effective_chat.id,
         reply_to_message_id = update.effective_message.message_id,
@@ -58,7 +58,7 @@ def ob_callback(update: Update, context: CallbackContext) -> None:
         )
 ob_handler = CommandHandler("ob", ob_callback, filters=Filters.chat_type.group & ~Filters.update.edited_message)
 
-def echo_callback(update:Update, context:CallbackContext) -> None:
+def echo_callback(update: Update, context: CallbackContext) -> None:
     userQuery = ' '.join(context.args)
     parentMsg = update.effective_message.reply_to_message
     if userQuery in {"", " "}:
@@ -69,7 +69,7 @@ def echo_callback(update:Update, context:CallbackContext) -> None:
         context.bot.send_message(chat_id=update.effective_chat.id, reply_to_message_id=update.effective_message.message_id, text=userQuery)
 echo_handler = CommandHandler("echo", echo_callback, filters=~Filters.update.edited_message)
 
-def new_mem_callback(update: Update, context: CallbackContext):
+def new_mem_callback(update: Update, context: CallbackContext) -> None:
     members = update.message.new_chat_members
     members = ['@'+m.username for m in members]
     update.message.reply_text(f"Welcome {','.join(members)}!")
