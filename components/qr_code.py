@@ -21,13 +21,13 @@ Here <code>msg 2</code> is a reply to <code>msg 1</code>.
 You can also use <code>/qr</code> instead of <code>/qrcode</code>.
 '''
 
-def getImageBytes(img:Image):
+def getImageBytes(img: Image) -> bytes:
     byteIO = io.BytesIO()
     img.save(byteIO, format='PNG')
     byteArr = byteIO.getvalue()
     return byteArr
 
-def getQR(query:str) -> str:
+def getQR(query: str) -> str:
     queryHash = hashlib.sha1(query.encode('utf-8')).hexdigest()
     
     query_in_db = qr_collection.find_one({'_id':f'{queryHash}'}) 
@@ -57,7 +57,7 @@ def getQR(query:str) -> str:
     return qr_url
 
 
-def qr_callback(update:Update, context:CallbackContext):
+def qr_callback(update: Update, context: CallbackContext) -> None:
     userQuery = ' '.join(context.args)
     parentMsg = update.effective_message.reply_to_message
     if userQuery in ['', ' ']:
