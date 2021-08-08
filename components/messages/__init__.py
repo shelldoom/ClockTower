@@ -26,7 +26,7 @@ Commands available:
 """
 
 GRP_START_MSG = """
-Hello, I'm a bot. To get started, message <code>/start</code>.
+Hello, I'm a bot. To get started, message <code>/help</code> here or in PM.
 """
 
 START_STICKER = [
