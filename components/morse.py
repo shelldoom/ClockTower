@@ -64,18 +64,18 @@ REVERSE_CODE_LOOKUP = {v: k for k, v in MORSE_CODE_LOOKUP.items()}
 
 def encode(query: str, spacing: int = 4) -> str:
     query = query.capitalize().split(" ")
-    word_separtor = " " * spacing
+    word_separator = " " * spacing
     for i in range(len(query)):
         query[i] = [MORSE_CODE_LOOKUP[char] for char in query[i]]
-    result = word_separtor.join([" ".join(word) for word in query])
+    result = word_separator.join([" ".join(word) for word in query])
     return result
 
 
 def decode(query: str, spacing: int = 4) -> str:
     validate_morse(query)
-    word_separtor = " " * spacing
+    word_separator = " " * spacing
     result = ""
-    for word in query.split(word_separtor):
+    for word in query.split(word_separator):
         for char in word.split(" "):
             result += REVERSE_CODE_LOOKUP[char]
         result += " "
