@@ -24,13 +24,17 @@ A telegram bot made with python
 - [pymongo](https://github.com/mongodb/mongo-python-driver)
 
 #### Installation & Usage
+1. ```bash
+   git clone https://github.com/shelldoom/ClockTower.git
+   ```
+
 1. Install dependencies
 ```bash
 pip3 install -r requirements.txt
 ```
-2. Setup config.ini
-3. Setup MongoDB
-4. Run `main.py`
+1. Setup config.ini
+1. Setup MongoDB
+1. Run `main.py`
 
 #### Todo list:
 
