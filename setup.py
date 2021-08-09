@@ -10,7 +10,8 @@ from components.basic_cmds import (
     ob_handler,
     echo_handler,
     new_mem_handler,
-    badCmd_Handler
+    badCmd_Handler,
+    source_handler
 )
 from components.clg_cmds import ar_handler, hub_handler, bulletin_handler, cal_handler
 from components.upload_img import imgup_handler
@@ -25,7 +26,7 @@ def setup(dispatcher: Dispatcher) -> None:
     dispatcher.add_handler(calc_handler)
     mapper(
         dispatcher.add_handler,
-        [start_handler, help_handler, donate_handler, ob_handler, echo_handler, new_mem_handler, badCmd_Handler],
+        [start_handler, help_handler, donate_handler, ob_handler, echo_handler, new_mem_handler, badCmd_Handler, source_handler],
     )
     dispatcher.add_handler(mc_handler)
     dispatcher.add_handler(mcd_handler)
