@@ -24,7 +24,7 @@ A telegram bot made with python
 - [pymongo](https://github.com/mongodb/mongo-python-driver)
 
 #### Installation & Usage
-1. 
+1. Clone Repo
    
    ```bash
    git clone https://github.com/shelldoom/ClockTower.git
