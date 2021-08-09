@@ -1,5 +1,9 @@
 import html
 
+SOURCE_MSG = """
+https://github.com/shelldoom/ClockTower
+"""
+
 HELP_MSG = f"""
 Hey there user!
 
@@ -43,7 +47,7 @@ No hubs running. Know any active hubs that are not listed here ? Use /feedback c
 """
 
 AR_MSG = """
-No resources are available at the moment. Are you willing to contribute any resouces or have a link ? Use /feedback to send any resources.
+No resources are available at the moment. Are you willing to contribute any resources or have a link ? Use /feedback to send any resources.
 """
 
 
