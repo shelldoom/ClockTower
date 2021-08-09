@@ -1,7 +1,7 @@
 from telegram.ext import CallbackContext, Filters, CommandHandler, MessageHandler
 from telegram import Update
 from random import choice
-from .messages import HELP_MSG, DONATE_MSG, START_STICKER, GRP_START_MSG
+from .messages import HELP_MSG, DONATE_MSG, START_STICKER, GRP_START_MSG, SOURCE_MSG
 
 
 # /start
@@ -36,6 +36,13 @@ def donate_callback(update: Update, context: CallbackContext) -> None:
     )
 donate_handler = CommandHandler(["donate"], donate_callback)
 
+# /source
+def source_callback(update: Update, context: CallbackContext) -> None:
+    context.bot.sendMessage(
+        chat_id = update.effective_chat.id,
+        text = SOURCE_MSG,
+    )
+source_handler = CommandHandler(["source"], source_callback)
 
 # /ob
 def ob_callback(update: Update, context: CallbackContext) -> None:
