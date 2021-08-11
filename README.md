@@ -22,6 +22,7 @@ A telegram bot made with python
 - [python-telegram-bot](https://python-telegram-bot.org/)
 - [Requests](https://docs.python-requests.org/en/master/)
 - [pymongo](https://github.com/mongodb/mongo-python-driver)
+- [qrcode](https://github.com/lincolnloop/python-qrcode)
 
 #### Installation & Usage
 1. Clone Repo
