@@ -1,5 +1,7 @@
 ### ClockTower
 
+<img src="./clocktower.png" style="zoom: 67%;" />
+
 A telegram bot made with python
 
 #### Features:
